@@ -16,18 +16,38 @@ public class EjerciciosBasicoJava {
         }
         return false;  
     } 
+    
     public int multa(int velocidad,boolean cumpleanos){
+        if(cumpleanos==true){
+            velocidad-=5;
+        }
+        if(velocidad<=60){
         return 0; 
+        }
+        if(60<velocidad && velocidad<=80){
+        return 1;
+        }
+        return 2;
+        
     }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //1ºEjercicio
+        
         EjerciciosBasicoJava ejercicio =new EjerciciosBasicoJava();
+        //1ºEjercicio
         System.out.println(ejercicio.fiestaArdillas(30,false));
         System.out.println(ejercicio.fiestaArdillas(50,false));
         System.out.println(ejercicio.fiestaArdillas(50,true));
+        //2ºEjercicio
+        System.out.println(ejercicio.multa(60,false));
+        System.out.println(ejercicio.multa(65,false));
+        System.out.println(ejercicio.multa(65,true));
+        
+        
+        
+        
     }
     
 }
