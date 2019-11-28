@@ -30,10 +30,17 @@ public class EjerciciosBasicoJava {
         return 2;
         
     }
+    public boolean muyVanidoso(int multiplo){
+        
+        if(multiplo%11==0||(multiplo%11)-1==0){
+            return true;
+        }
+        return false;
+    }   
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+     public static void main(String[] args){
         
         EjerciciosBasicoJava ejercicio =new EjerciciosBasicoJava();
         //1ºEjercicio
@@ -44,6 +51,10 @@ public class EjerciciosBasicoJava {
         System.out.println(ejercicio.multa(60,false));
         System.out.println(ejercicio.multa(65,false));
         System.out.println(ejercicio.multa(65,true));
+        //3ºEjercicio
+        System.out.println(ejercicio.muyVanidoso(22));
+        System.out.println(ejercicio.muyVanidoso(23));
+        System.out.println(ejercicio.muyVanidoso(24));
         
         
         
@@ -51,3 +62,4 @@ public class EjerciciosBasicoJava {
     }
     
 }
+
