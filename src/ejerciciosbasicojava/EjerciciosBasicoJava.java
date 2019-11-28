@@ -37,6 +37,21 @@ public class EjerciciosBasicoJava {
         }
         return false;
     }   
+    public boolean telefono(boolean mañana,boolean madre,boolean dormir){
+        if(dormir){
+            return false;
+        }
+        if((!mañana)||(mañana&& madre)){
+            return true;
+        }
+        return false;
+    }
+    public boolean menorPor10(int a,int b,int c){
+        if(a>10||b>10||c>10){
+            return true;
+        }
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -55,6 +70,14 @@ public class EjerciciosBasicoJava {
         System.out.println(ejercicio.muyVanidoso(22));
         System.out.println(ejercicio.muyVanidoso(23));
         System.out.println(ejercicio.muyVanidoso(24));
+        //4ºEjercicio
+        System.out.println(ejercicio.telefono(false,false,false));
+        System.out.println(ejercicio.telefono(false,false,true));
+        System.out.println(ejercicio.telefono(true,false,false));
+        //5ºEjercicio
+        System.out.println(ejercicio.menorPor10(5,7,11));
+        System.out.println(ejercicio.menorPor10(11,7,1));
+        System.out.println(ejercicio.menorPor10(5,7,10));
         
         
         
