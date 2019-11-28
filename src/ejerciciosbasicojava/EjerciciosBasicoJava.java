@@ -15,11 +15,15 @@ public class EjerciciosBasicoJava {
             return true;
         }
         return false;  
+    } 
+    public int multa(int velocidad,boolean cumpleanos){
+        return 0; 
     }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //1ºEjercicio
         EjerciciosBasicoJava ejercicio =new EjerciciosBasicoJava();
         System.out.println(ejercicio.fiestaArdillas(30,false));
         System.out.println(ejercicio.fiestaArdillas(50,false));
