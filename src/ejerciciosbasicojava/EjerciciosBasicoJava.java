@@ -30,6 +30,7 @@ public class EjerciciosBasicoJava {
         return 2;
         
     }
+    
     public boolean muyVanidoso(int multiplo){
         
         if(multiplo%11==0||(multiplo%11)-1==0){
@@ -37,6 +38,7 @@ public class EjerciciosBasicoJava {
         }
         return false;
     }   
+    
     public boolean telefono(boolean mañana,boolean madre,boolean dormir){
         if(dormir){
             return false;
@@ -46,18 +48,21 @@ public class EjerciciosBasicoJava {
         }
         return false;
     }
+    
     public boolean menorPor10(int a,int b,int c){
         if(Math.abs(a-b)>=10||Math.abs(a-c)>=10||Math.abs(c-b)>=10){
             return true;
         }
         return false;
     }
+    
     public boolean digitoIgual(int a,int b){
         if(a/10==b/10||a/10==b%10||a%10==b%10||a%10==b/10){
             return true;
         }
         return false;
     }
+    
     public boolean multiplo35(int a){
         if((a%3==0 && a%5==0)){
             return false;
@@ -68,6 +73,7 @@ public class EjerciciosBasicoJava {
         
         return false;
     }
+    
     public boolean menor20(int a){
         while(a>20){
             a-=20;
@@ -77,6 +83,7 @@ public class EjerciciosBasicoJava {
         }
         return false;
     }
+    
     public int loteria(int a,int b,int c){
         if (a==b&&b==c&&a==2){
             return 10;
@@ -89,6 +96,7 @@ public class EjerciciosBasicoJava {
         }
         return 0;
     }
+    
     public int da2(int a,int b,boolean dobles){
         int aux=a+b;
         if(dobles&&a==b){
@@ -142,9 +150,7 @@ public class EjerciciosBasicoJava {
         System.out.println(ejercicio.da2(2,3,true));
         System.out.println(ejercicio.da2(3,3,false));
         System.out.println(ejercicio.da2(3,3,true));
-        System.out.println(ejercicio.da2(6,6,true));
-        
+        System.out.println(ejercicio.da2(6,6,true)); 
     }
-    
 }
 
