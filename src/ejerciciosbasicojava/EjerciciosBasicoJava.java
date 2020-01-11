@@ -5,11 +5,14 @@
  */
 package ejerciciosbasicojava;
 
+import java.util.Arrays;
+
 /**
  *
  * @author usuario
  */
 public class EjerciciosBasicoJava {
+    
     public boolean fiestaArdillas(int bellotas,boolean finDeSemana){
         if(bellotas>=40&&bellotas<=60||finDeSemana){
             return true;
@@ -98,11 +101,68 @@ public class EjerciciosBasicoJava {
     }
     
     public int da2(int a,int b,boolean dobles){
-        int aux=a+b;
+        int resul=a+b;
         if(dobles&&a==b){
-            aux++;
+            resul++;
         }
-        return aux;
+        return resul;
+    }
+    int[] listaMax = {60,10,1,150};
+    public int [] maximos(int[]lista){
+        int max=0, max2=0,posMax=0;  
+        for(int i=0;i<lista.length;i++){
+            if(lista[i]>max){
+                max=lista[i];
+                posMax=i;
+            }
+        }
+        lista[posMax]=0;
+        for(int i=0;i<lista.length;i++){
+            if(lista[i]>max2){
+                max2=lista[i];
+            }
+        }
+        int []maxs={max,max2};
+        return maxs;  
+    }
+    public boolean Palindromo(String frase){
+        frase=frase.toUpperCase();
+        String aux = "";
+        for (int i=0; i<frase.length(); i++){
+            if (frase.charAt(i) != ' '){
+                aux = aux + frase.charAt(i);
+            }
+        }
+        frase=aux;
+        int i=0;
+        while(i<frase.length()/2 && frase.charAt(i)==frase.charAt(frase.length()-(i+1))){
+               i++;     
+        }
+        if (i==frase.length()/2){
+            return true;
+        }
+        return false;
+    }
+    public boolean Isograma(String frase){
+        frase=frase.toUpperCase();
+        String aux = "";
+        for (int i=0; i<frase.length(); i++){
+            if (frase.charAt(i) != ' '){
+                aux = aux + frase.charAt(i);
+            }
+        }
+        frase=aux;
+        int i=0,a=0;
+        while(i<frase.length()&&frase.charAt(i)!=frase.charAt(frase.length()-(i+1))){
+            while(a<frase.length()&&frase.charAt(i)!=frase.charAt(frase.length()-(a+1))){
+                a++;
+            }
+            i++;
+        }
+        if (i==frase.length()){
+            return true;
+        }
+        return false;
     }
     /**
      * @param args the command line arguments
@@ -151,6 +211,17 @@ public class EjerciciosBasicoJava {
         System.out.println(ejercicio.da2(3,3,false));
         System.out.println(ejercicio.da2(3,3,true));
         System.out.println(ejercicio.da2(6,6,true)); 
-    }
+        //Maximos de un array
+        System.out.println(Arrays.toString(ejercicio.maximos(ejercicio.listaMax)));
+        //Palindromo
+        System.out.println(ejercicio.Palindromo("ACASO HUBoBUHOS ACA"));
+        //Isograma
+        if(ejercicio.Isograma("asdf")){
+            System.out.println("Es isograma");
+        }
+        else{
+            System.out.println("No es isograma");
+        }
+    } 
 }
 
