@@ -112,15 +112,19 @@ public class EjerciciosBasicoJava {
     //Ejercicios nivel 01
     //
     //
-    int[] listaMax = {60, 10, 1, 150};
+    int[] listaMax = {120, 100, 1, 150};
 
     public int[] maximos(int[] lista) {
-        int max = 0, max2 = 0, posMax = 0;
+        int max = lista[0], max2 = lista[0], posMax = 0;
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i] > max) {
+            if (lista[i]> max ){
                 max2=max;
-                max = lista[i];
-            }  
+                max = lista[i];  
+            }
+            else if(max2<lista[i]&&lista[i]!=max){
+                max2=lista[i];
+            }
+            
         }
         int[] maxs = {max, max2};
         return maxs;
@@ -170,6 +174,7 @@ public class EjerciciosBasicoJava {
     public void imprimeMes(int a) {
         int dias = 1;
         int fila = 0;
+        a=a%7;
         boolean columna1 = true;
         while (dias <= 31) {
             fila = 0;
@@ -250,7 +255,7 @@ public class EjerciciosBasicoJava {
         //Maximos de un array
         System.out.println(Arrays.toString(ejercicio.maximos(ejercicio.listaMax)));
         //Palindromo
-        if ((ejercicio.Palindromo("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"))) {
+        if ((ejercicio.Palindromo("hola  aloh"))) {
             System.out.println("Es palindromo");
         } else {
             System.out.println("No es palindromo");
@@ -261,6 +266,6 @@ public class EjerciciosBasicoJava {
         } else {
             System.out.println("No es isograma");
         }
-        ejercicio.imprimeMes(0);
+        ejercicio.imprimeMes(8);
     }
 }
