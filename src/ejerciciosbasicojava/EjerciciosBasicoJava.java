@@ -118,15 +118,9 @@ public class EjerciciosBasicoJava {
         int max = 0, max2 = 0, posMax = 0;
         for (int i = 0; i < lista.length; i++) {
             if (lista[i] > max) {
+                max2=max;
                 max = lista[i];
-                posMax = i;
-            }
-        }
-        lista[posMax] = 0;
-        for (int i = 0; i < lista.length; i++) {
-            if (lista[i] > max2) {
-                max2 = lista[i];
-            }
+            }  
         }
         int[] maxs = {max, max2};
         return maxs;
@@ -177,7 +171,7 @@ public class EjerciciosBasicoJava {
         int dias = 1;
         int fila = 0;
         boolean columna1 = true;
-        while (dias <=31) {
+        while (dias <= 31) {
             fila = 0;
             while (fila < 7 && dias <= 31) {
                 if (columna1) {
@@ -187,20 +181,21 @@ public class EjerciciosBasicoJava {
                         columna1 = false;
                     }
                 }
-                if (dias < 10 && fila<7) {
+                if (dias < 10 && fila < 7) {
                     System.out.print(dias + "  ");
                     fila++;
                     dias++;
-                } 
-                else{
+                } else {
                     System.out.print(dias + " ");
                     fila++;
                     dias++;
                 }
             }
-            if(dias<=31)System.out.println();   
+            if (dias <= 31) {
+                System.out.println();
+            }
         }
-        for (int k = 0; k < 7-fila; k++) {
+        for (int k = 0; k < 7 - fila; k++) {
             System.out.print("XX ");
         }
     }
