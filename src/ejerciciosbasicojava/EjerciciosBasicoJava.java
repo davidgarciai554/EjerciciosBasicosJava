@@ -112,98 +112,7 @@ public class EjerciciosBasicoJava {
     //Ejercicios nivel 01
     //
     //
-    int[] listaMax = {120, 100, 1, 150};
-
-    public int[] maximos(int[] lista) {
-        int max = lista[0], max2 = lista[0], posMax = 0;
-        for (int i = 0; i < lista.length; i++) {
-            if (lista[i]> max ){
-                max2=max;
-                max = lista[i];  
-            }
-            else if(max2<lista[i]&&lista[i]!=max){
-                max2=lista[i];
-            }
-            
-        }
-        int[] maxs = {max, max2};
-        return maxs;
-    }
-
-    public boolean Palindromo(String frase) {
-        frase = frase.toUpperCase();
-        String aux = "";
-        for (int i = 0; i < frase.length(); i++) {
-            if (frase.charAt(i) != ' ') {
-                aux = aux + frase.charAt(i);
-            }
-        }
-        frase = aux;
-        int i = 0;
-        while (i < frase.length() / 2 && frase.charAt(i) == frase.charAt(frase.length() - (i + 1))) {
-            i++;
-        }
-        if (i == frase.length() / 2) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean Isograma(String frase) {
-        frase = frase.toUpperCase();
-        String aux = "";
-        for (int i = 0; i < frase.length(); i++) {
-            if (frase.charAt(i) != ' ') {
-                aux = aux + frase.charAt(i);
-            }
-        }
-        frase = aux;
-        int i = 0, a = 0;
-        while (i < frase.length() && frase.charAt(i) != frase.charAt(frase.length() - (i + 1))) {
-            while (a < frase.length() && frase.charAt(i) != frase.charAt(frase.length() - (a + 1))) {
-                a++;
-            }
-            i++;
-        }
-        if (i == frase.length()) {
-            return true;
-        }
-        return false;
-    }
-
-    public void imprimeMes(int a) {
-        int dias = 1;
-        int fila = 0;
-        a=a%7;
-        boolean columna1 = true;
-        while (dias <= 31) {
-            fila = 0;
-            while (fila < 7 && dias <= 31) {
-                if (columna1) {
-                    for (int k = 0; k < a; k++) {
-                        System.out.print("XX ");
-                        fila++;
-                        columna1 = false;
-                    }
-                }
-                if (dias < 10 && fila < 7) {
-                    System.out.print(dias + "  ");
-                    fila++;
-                    dias++;
-                } else {
-                    System.out.print(dias + " ");
-                    fila++;
-                    dias++;
-                }
-            }
-            if (dias <= 31) {
-                System.out.println();
-            }
-        }
-        for (int k = 0; k < 7 - fila; k++) {
-            System.out.print("XX ");
-        }
-    }
+    
 
     /**
      * @param args the command line arguments
@@ -252,20 +161,5 @@ public class EjerciciosBasicoJava {
         System.out.println(ejercicio.da2(3, 3, false));
         System.out.println(ejercicio.da2(3, 3, true));
         System.out.println(ejercicio.da2(6, 6, true));
-        //Maximos de un array
-        System.out.println(Arrays.toString(ejercicio.maximos(ejercicio.listaMax)));
-        //Palindromo
-        if ((ejercicio.Palindromo("hola  aloh"))) {
-            System.out.println("Es palindromo");
-        } else {
-            System.out.println("No es palindromo");
-        }
-        //Isograma
-        if (ejercicio.Isograma("asdfa")) {
-            System.out.println("Es isograma");
-        } else {
-            System.out.println("No es isograma");
-        }
-        ejercicio.imprimeMes(8);
     }
 }
